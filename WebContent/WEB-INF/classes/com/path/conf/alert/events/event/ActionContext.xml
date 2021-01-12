@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="alertIndividualEventAction" class="com.path.alert.actions.events.event.IndividualEventMaintAction"
+		scope="prototype" parent="alertBaseAction">
+	    <property name="individualEventBO" ref="individualEventBO"></property>  
+	</bean>
+
+	<bean id="alertIndividualEventListAction" class="com.path.alert.actions.events.event.IndividualEventListAction"
+		scope="prototype" parent="baseAction">
+	 	<property name="individualEventBO" ref="individualEventBO"></property>
+	</bean>
+	
+	<bean id="alrtTagsAction" class="com.path.alert.actions.events.event.AlrtTagsAction" scope="prototype" parent="baseAction">
+	 	<property name="individualEventBO" ref="individualEventBO"></property>
+	</bean>
+	
+	<bean id="individualEventStatusAction" class="com.path.alert.actions.events.event.IndividualEventStatusAction"
+		scope="prototype" parent="baseAction">
+	</bean>
+	
+	<bean id="queryLookupAction" class="com.path.alert.actions.events.event.lookups.QueryLookupAction"
+		scope="prototype" parent="baseAction">
+	 	<property name="individualEventBO" ref="individualEventBO"></property>
+	</bean>
+	
+	<bean id="queryLookupDependancyAction" class="com.path.alert.actions.events.event.lookups.QueryLookupDependancyAction" 
+		  scope="prototype" parent="baseAction">
+	 	<property name="individualEventBO" ref="individualEventBO"></property>
+	</bean>
+	
+	<bean id="reportLookupAction" class="com.path.alert.actions.events.event.lookups.ReportLookupAction" scope="prototype" parent="baseAction">
+	 	<!-- <property name="individualEventBO" ref="individualEventBO"></property> -->
+	 	<property name="usrBO" ref="usrBO"></property>
+	</bean>
+
+	<bean id="reportLookupDependancyAction" class="com.path.alert.actions.events.event.lookups.ReportLookupDependancyAction" scope="prototype" parent="baseAction">
+	 	<property name="individualEventBO" ref="individualEventBO"></property>
+	</bean>
+	
+	<bean id="fixedEvtIdLookupAction"
+		class="com.path.alert.actions.events.event.lookups.FixedEvtIdLookupAction"
+		scope="prototype" parent="baseAction">
+	 	<property name="individualEventBO" ref="individualEventBO"></property>
+
+	</bean>
+	
+	<bean id="alertIndividualEventDepAction"
+		class="com.path.alert.actions.events.event.IndividualEventDepAction"
+		scope="prototype" parent="baseAction">
+	    <property name="individualEventBO" ref="individualEventBO"></property>  
+
+	</bean>
+	
+	<bean id="individualEventGridAction"
+		class="com.path.alert.actions.events.event.IndividualEventGridAction"
+		scope="prototype" parent="baseAction">
+	 	<property name="individualEventBO" ref="individualEventBO"></property>
+
+	</bean>
+	
+</beans>

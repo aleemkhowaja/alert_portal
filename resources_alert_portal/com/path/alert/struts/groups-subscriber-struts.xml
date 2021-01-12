@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="alert-groups" namespace="/path/alert/subscriber/groups"
+		extends="path-default">
+
+		<action name="GroupsMaintAction_*" method="{1}"
+			class="alertGroupsMaintAction">
+			<result name="groupsList">/WEB-INF/pages/alert/subscriber/groups/GroupsSubscriberList.jsp
+			</result>
+			<result name="groupsMaint">/WEB-INF/pages/alert/subscriber/groups/GroupsSubscriberMaint.jsp
+			</result>
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+
+			<result name="save" type="json">
+				<param name="ignoreHierarchy">false</param>
+
+			</result>
+			<result name="delete" type="json">
+				<param name="ignoreHierarchy">false</param>
+
+			</result>
+			
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		<action name="GroupsListAction_*" method="{1}"
+			class="alertGroupsListAction">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+
+		<action name="GroupsNotSubListAction_*" method="{1}"
+			class="alertGroupsNotSubListAction">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+
+		<action name="GroupsSubListAction_*" method="{1}"
+			class="alertGroupsSubListAction">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+
+		<action name="GroupsStatusAction_*" class="groupsStatusAction"
+			method="{1}">
+			<result name="loadGrid" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+
+		<action name="ListGroupSubscribersAction_*" class="alertListGroupSubscribersAction" method="{1}">
+			<result name="listGroupSubscribers">/WEB-INF/pages/alert/process/ListGroupSubscribers.jsp</result>
+		</action>
+
+		<action name="GroupSubscriberLookupAction_*" method="{1}"
+			class="groupSubscriberLookupAction">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

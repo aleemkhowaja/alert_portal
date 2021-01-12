@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="alertIndividualSubscriberAction"
+		class="com.path.alert.actions.subscriber.individual.IndividualSubscriberMaintAction"
+		scope="prototype" parent="alertBaseAction">
+	 <property name="individualSubscriberBO" ref="individualSubscriberBO"></property>	 
+
+	</bean>
+	
+	
+	
+	<bean id="alertIndividualSubscriberDepAction"
+		class="com.path.alert.actions.subscriber.individual.IndividualSubscriberDepAction"
+		scope="prototype" parent="baseAction">
+	 <property name="individualSubscriberBO" ref="individualSubscriberBO"></property>
+	 <property name="memoBO" ref="memoBO"></property>
+	 <property name="individualEventBO" ref="individualEventBO"></property>	
+	</bean>
+
+ 
+	<bean id="alertIndividualSubscriberListAction"
+		class="com.path.alert.actions.subscriber.individual.IndividualSubscriberListAction"
+		scope="prototype" parent="baseAction">
+	<property name="individualSubscriberBO" ref="individualSubscriberBO"></property>
+
+	</bean>
+	
+	
+	<bean id="indSubscriberStatusAction" class="com.path.alert.actions.subscriber.individual.IndSubscriberStatusAction" scope="prototype" parent="baseAction">
+	</bean>
+ 
+	 <bean id="alertListIndividualSubscriber"
+		class="com.path.alert.actions.subscriber.individual.ListIndividualSubscriberAction"
+		scope="prototype" parent="baseAction">
+	</bean>
+	
+	<bean id="individualSubscriberCIFLookupAction"
+		class="com.path.alert.actions.subscriber.individual.IndividualSubscriberCIFLookupAction"
+		scope="prototype" parent="baseAction">
+		<property name="individualSubscriberBO" ref="individualSubscriberBO"></property>
+	</bean>
+ 
+	<bean id="indSubUsrLookupAction"
+		class="com.path.alert.actions.subscriber.individual.IndSubUsrLookupAction"
+		scope="prototype" parent="baseAction">
+		<property name="individualSubscriberBO" ref="individualSubscriberBO"></property>
+	</bean>
+	
+	<bean id="channelEndUserLookupAction"
+		class="com.path.alert.actions.subscriber.individual.lookups.ChannelEndUserLookupAction"
+		scope="prototype" parent="baseAction">
+		<property name="individualSubscriberBO" ref="individualSubscriberBO"></property>
+	</bean>
+ 
+</beans>
+
+

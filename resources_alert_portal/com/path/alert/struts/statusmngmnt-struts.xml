@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="statusMngmnt" namespace="/path/statusMngmnt"
+		extends="path-default">
+		<action name="StatusMngmntListAction_*" class="statusMngmntListAction"
+			method="{1}">
+<!-- 			<result name="statusmanagemnt">/WEB-INF/pages/alert/statusmngmnt/StatusMngmntGrid.jsp	</result> -->
+<!-- 			<result name="subscriberpackage">/WEB-INF/pages/alert/statusmngmnt/SubscriberPackageGrid.jsp	</result> -->
+<!-- 			<result name="grouppackage">/WEB-INF/pages/alert/statusmngmnt/GroupPackageGrid.jsp	</result> -->
+<!-- 			<result name="groupevent">/WEB-INF/pages/alert/statusmngmnt/GroupEventGrid.jsp	</result> -->
+<!-- 			<result name="subscriberevent">/WEB-INF/pages/alert/statusmngmnt/SubscriberEventGrid.jsp	</result> -->
+		
+			<result name="loadGridpage">/WEB-INF/pages/alert/statusmngmnt/GridLoad.jsp	</result>
+		
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		<action name="StatusMngmntMaintAction_*" class="statusMngmntMaintAction"
+			method="{1}">
+			<result name="statusMngmntList">/WEB-INF/pages/alert/statusmngmnt/StatusMngmntMaint.jsp
+			</result>
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+
+	</package>
+</struts>

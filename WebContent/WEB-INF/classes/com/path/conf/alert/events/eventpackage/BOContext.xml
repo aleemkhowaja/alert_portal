@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="packageEventBO" factory-bean="alertServiceBeanFactory"
+		factory-method="getInstance" parent="baseBO">
+		<constructor-arg name="implClassName"
+			value="com.path.alert.bo.events.eventpackage.impl.PackageEventBOImpl" />
+		<constructor-arg name="interfaceName"
+			value="com.path.alert.bo.events.eventpackage.PackageEventBO" />
+		<constructor-arg name="remoteServiceName" value="packageEventBOService" />
+		<property name="alertPackageEventDAO" ref="alertPackageEventDAO"></property>
+		<property name="alertCommonLibBO" ref="alertCommonLibBO"></property>
+	</bean>
+
+
+</beans>

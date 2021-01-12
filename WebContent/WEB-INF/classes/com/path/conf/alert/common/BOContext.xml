@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="alertCommonLibBO" factory-bean="alertServiceBeanFactory"
+		factory-method="getInstance" parent="baseBO">
+		<constructor-arg name="implClassName" value="com.path.alert.bo.common.impl.AlertCommonLibBOImpl" />
+		<constructor-arg name="interfaceName" value="com.path.alert.bo.common.AlertCommonLibBO" />
+		<constructor-arg name="remoteServiceName" value="alertCommonLibBOService" />
+		<property name="alertCommonLibDAO" ref="alertCommonLibDAO"></property>
+		<property name="alertIndividualSubscriberDAO" ref="alertIndividualSubscriberDAO"></property>	
+	</bean>
+	
+	<!-- Used for companies in alert -->
+	<bean id="alertCompaniesBO" factory-bean="alertServiceBeanFactory"
+		factory-method="getInstance" parent="baseBO">
+		<constructor-arg name="implClassName" value="com.path.alert.bo.companies.impl.CompaniesBOImpl" />
+		<constructor-arg name="interfaceName" value="com.path.alert.bo.companies.CompaniesBO" />
+		<constructor-arg name="remoteServiceName" value="alertCompaniesBOService" />
+		<property name="companiesBO" ref="companiesBO"></property>
+	</bean>
+
+	<!-- Used for branches in alert -->
+	 <bean id="alertBranchesBO" factory-bean="alertServiceBeanFactory"
+		factory-method="getInstance" parent="baseBO">
+		<constructor-arg name="implClassName" value="com.path.alert.bo.branches.impl.BranchesBOImpl" />
+		<constructor-arg name="interfaceName" value="com.path.alert.bo.branches.BranchesBO" />
+		<constructor-arg name="remoteServiceName" value="alertBranchesBOService" />
+		<property name="alertBranchDAO" ref="alertBranchDAO"></property>
+	</bean>
+	
+	<!-- Used for application in alert -->
+	<bean id="alertApplicationsBO" factory-bean="alertServiceBeanFactory"
+		factory-method="getInstance" parent="baseBO">
+		<constructor-arg name="implClassName" value="com.path.alert.bo.applications.impl.ApplicationsBOImpl" />
+		<constructor-arg name="interfaceName" value="com.path.alert.bo.applications.ApplicationsBO" />
+		<constructor-arg name="remoteServiceName" value="alertApplicationsBOService" />
+		<property name="applicationsBO" ref="applicationsBO"></property>
+	</bean>
+	
+	<!-- Used for progRef in alert -->
+	<bean id="alertProgRefBO" factory-bean="alertServiceBeanFactory"
+		factory-method="getInstance" parent="baseBO">
+		<constructor-arg name="implClassName" value="com.path.alert.bo.progref.impl.ProgRefBOImpl" />
+		<constructor-arg name="interfaceName" value="com.path.alert.bo.progref.ProgRefBO" />
+		<constructor-arg name="remoteServiceName" value="alertProRefBOService" />
+		<property name="progRefDAO" ref="alertProgRefDAOImpl"></property>
+	</bean>
+	
+	<!-- Used for todo Alert in alert -->
+	<bean id="alertTodoAlertBO" factory-bean="alertServiceBeanFactory"
+		factory-method="getInstance" parent="baseBO">
+		<constructor-arg name="implClassName" value="com.path.alert.bo.todoalert.impl.TodoAlertBOImpl" />
+		<constructor-arg name="interfaceName" value="com.path.alert.bo.todoalert.TodoAlertBO" />
+		<constructor-arg name="remoteServiceName" value="alertTodoAlertService" />
+		<property name="todoAlertDAO" ref="alertTodoAlertDAOImpl"></property>
+	</bean>
+
+</beans>

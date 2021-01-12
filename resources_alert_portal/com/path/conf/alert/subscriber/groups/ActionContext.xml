@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="alertGroupsMaintAction"
+		class="com.path.alert.actions.subscriber.groups.GroupsMaintAction"
+		scope="prototype" parent="alertBaseAction">
+		<property name="groupsSubscriberBO" ref="groupsSubscriberBO"></property>
+		<property name="alertCommonLibBO" ref="alertCommonLibBO"></property>
+
+
+
+	</bean>
+
+	<bean id="alertGroupsListAction"
+		class="com.path.alert.actions.subscriber.groups.GroupsListAction"
+		scope="prototype" parent="baseAction">
+		<property name="groupsSubscriberBO" ref="groupsSubscriberBO"></property>
+
+	</bean>
+
+	<bean id="alertGroupsNotSubListAction"
+		class="com.path.alert.actions.subscriber.groups.GroupsNotSubListAction"
+		scope="prototype" parent="baseAction">
+		<property name="groupsSubscriberBO" ref="groupsSubscriberBO"></property>
+
+	</bean>
+
+	<bean id="alertGroupsSubListAction"
+		class="com.path.alert.actions.subscriber.groups.GroupsSubListAction"
+		scope="prototype" parent="baseAction">
+		<property name="groupsSubscriberBO" ref="groupsSubscriberBO"></property>
+
+	</bean>
+
+	<bean id="groupsStatusAction"
+		class="com.path.alert.actions.subscriber.groups.GroupsStatusAction"
+		scope="prototype" parent="baseAction">
+	</bean>
+
+	<bean id="alertListGroupSubscribersAction"
+		class="com.path.alert.actions.subscriber.groups.ListGroupSubscribersAction"
+		scope="prototype" parent="baseAction">
+	</bean>
+	
+	<bean id="groupSubscriberLookupAction"
+		class="com.path.alert.actions.subscriber.groups.GroupSubscriberLookupAction"
+		scope="prototype" parent="baseAction">
+		<property name="groupsSubscriberBO" ref="groupsSubscriberBO"></property>
+
+	</bean>
+</beans>

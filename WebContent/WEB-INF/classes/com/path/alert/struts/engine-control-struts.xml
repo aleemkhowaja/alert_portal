@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="engine-control" namespace="/path/alert/enginecontrol"
+		extends="path-default">
+		<action name="EngineControlMaintAction_*" method="{1}"
+			class="engineControlMaintAction">
+			<result name="success">
+				/WEB-INF/pages/alert/enginecontrol/EngineControl.jsp
+			</result>
+
+			<result name="jsonSuccess" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+
+		<action name="EngineControlListAction_*" method="{1}"
+			class="engineControlListAction">
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>	
+		
+		<action name="alertSubscriberLookupAction_*" method="{1}"
+			class="alertSubscriberLookupAction">
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>	
+		
+		<action name="alertUserLookupAction_*" method="{1}"
+			class="alertUserLookupAction">
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>	
+		
+		<action name="channelEndUserIdLookupAction_*" method="{1}"
+			class="channelEndUserIdLookupAction">
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>	
+
+	</package>
+
+</struts>

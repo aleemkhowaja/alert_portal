@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="alert-engine" namespace="/path/alert/actions/alertengine"
+		extends="path-default">
+
+		<action name="AlertEngineAction_*" method="{1}"	class="AlertEngineAction">
+			<result name="alertEngineMaint">/WEB-INF/pages/alert/process/AlertEngineMaint.jsp </result>
+		
+			<!-- <result name="save" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+			
+			<result name="delete" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result> -->
+		</action>
+	 </package>
+
+</struts>

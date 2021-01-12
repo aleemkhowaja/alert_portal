@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="alert-multiple-subscriber" namespace="/path/alert/subscriber/multiple" extends="path-default">
+
+		<action name="MultipleSubscriberMaintAction_*" method="{1}" class="alertMultipleSubscriberAction">
+			<result name="multipleSubscriberMaint">/WEB-INF/pages/alert/process/MultipleSubscriberMaint.jsp</result>
+			<result name="subscriberOtherLanguage">/WEB-INF/pages/alert/process/OtherLangDetailPopup.jsp</result>
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="MultipleSubscriberListAction_*" method="{1}" class="multipleSubscriberListAction">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+	</package>
+</struts>

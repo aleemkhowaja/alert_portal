@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="emailTemplateListAction" class="com.path.alert.actions.emailtemplate.EmailTemplateListAction" scope="prototype" parent="baseAction">
+	 	<property name="emailTemplateBO" ref="emailTemplateBO"></property>
+	</bean>
+	<bean id="emailTemplateMaintAction" class="com.path.alert.actions.emailtemplate.EmailTemplateMaintAction" scope="prototype" parent="baseAction">
+	 	<property name="emailTemplateBO" ref="emailTemplateBO"></property>
+	</bean>
+	<bean id="emailTemplateStatusAction" class="com.path.alert.actions.emailtemplate.EmailTemplateStatusAction" scope="prototype" parent="baseAction">
+	</bean>
+
+</beans>

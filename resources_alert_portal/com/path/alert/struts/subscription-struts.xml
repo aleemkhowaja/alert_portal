@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="subscription" namespace="/path/alert/subscription"
+		extends="path-default">	
+		<action name="SubscriptionMaintAction_*" class="subscriptionMaintAction"
+			method="{1}">
+			
+			<result name="SubscriptionMaint">/WEB-INF/pages/alert/process/subscription/SubscriptionMaint.jsp</result>
+			<result name="subscriptionGrids">/WEB-INF/pages/alert/process/subscription/SubscriptionList.jsp</result>
+			<result name="statusDetails">/WEB-INF/pages/alert/process/subscription/SubscriptionStatusDetails.jsp</result>
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+			<result name="eventsForPakgGridPage">/WEB-INF/pages/alert/process/subscription/EventsForPakgGrid.jsp</result>
+			<result name="subscribersForGrpGridPage">/WEB-INF/pages/alert/process/subscription/SubscribersForGrpGrid.jsp</result>
+		</action>
+		
+		<action name="SubscriptionListAction_*" class="subscriptionListAction"
+			method="{1}">
+			
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+			<result name="CommunicationTypeDetailPopup">/WEB-INF/pages/alert/process/subscription/CommunicationTypeDetailPopup.jsp
+			</result>
+			
+		</action>
+		
+		<action name="SelectSubscriptionDetailsGridAction_*" class="subscriptionDetailsGridAction"
+			method="{1}">
+			
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+			<result name="subDetails">/WEB-INF/pages/alert/process/subscription/SubscriptionDetailsList.jsp
+			</result>
+		</action>
+		
+		<action name="SelectFixedEventsParamGridAction_*" class="fixedEventsParamGridAction"
+			method="{1}">
+			
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+			<result name="eventsParam">/WEB-INF/pages/alert/process/subscription/FixedEventsParamsList.jsp
+			</result>
+		</action>
+		
+	</package>
+
+</struts>

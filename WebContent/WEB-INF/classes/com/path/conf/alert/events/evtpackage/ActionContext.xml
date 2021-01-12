@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	
+ 	<bean id="alertEventPackageListAction"
+		class="com.path.alert.actions.events.eventpackage.EventPackageListAction"
+		scope="prototype" parent="baseAction">
+	</bean>
+	
+	<bean id="alertPackageEventMaintAction"
+		class="com.path.alert.actions.events.eventpackage.PackageEventMaintAction"
+		scope="prototype" parent="baseAction">
+		<property name="packageEventBO" ref="packageEventBO"></property>
+	</bean>
+
+	<bean id="alertPackageEventListAction"
+		class="com.path.alert.actions.events.eventpackage.PackageEventListAction"
+		scope="prototype" parent="baseAction">
+		<property name="packageEventBO" ref="packageEventBO"></property>
+
+	</bean>
+
+	<bean id="alertEventNotInPackageListAction"
+		class="com.path.alert.actions.events.eventpackage.EventNotInPackageListAction"
+		scope="prototype" parent="baseAction">
+		<property name="packageEventBO" ref="packageEventBO"></property>
+
+	</bean>
+
+	<bean id="alertEventInPackageListAction"
+		class="com.path.alert.actions.events.eventpackage.EventInPackageListAction"
+		scope="prototype" parent="baseAction">
+		<property name="packageEventBO" ref="packageEventBO"></property>
+
+	</bean>
+
+	<bean id="packageStatusAction"
+		class="com.path.alert.actions.events.eventpackage.PackageStatusAction"
+		scope="prototype" parent="baseAction">
+	</bean>
+	
+	<bean id="eventPackageLookupAction"
+		class="com.path.alert.actions.events.eventpackage.EventPackageLookupAction"
+		scope="prototype" parent="baseAction">
+		<property name="packageEventBO" ref="packageEventBO"></property>
+
+	</bean>
+</beans>
+

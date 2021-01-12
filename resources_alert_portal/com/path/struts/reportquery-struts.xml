@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="reportQuery" namespace="/path/reportQuery"
+		extends="path-default">
+		<action name="ReportQueryListAction_*" class="reportQueryListAction"
+			method="{1}">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		<action name="ReportQueryMaintAction_*" class="reportQueryMaintAction"
+			method="{1}">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+			<result name="error" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+			<result name="reportQueryList">/WEB-INF/pages/alert/reportquery/ReportQueryList.jsp
+			</result>
+			<result name="reportQueryMaint">/WEB-INF/pages/alert/reportquery/ReportQueryMaint.jsp
+			</result>
+			<result name="reportQueryDetailPopup">/WEB-INF/pages/alert/reportquery/ReportQueryDetailPopup.jsp
+			</result>
+		</action>
+		<action name="ReportQueryStatusAction_*" class="reportQueryStatusAction"
+			method="{1}">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		<action name="QueryDesignerAction_*" class="queryDesignerAction"
+			method="{1}">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+	</package>
+</struts>

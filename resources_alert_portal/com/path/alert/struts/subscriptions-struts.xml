@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="alert-subscription" namespace="/path/alert/subscriptions"
+		extends="path-default">
+
+		<action name="SubscriptionListAction_*" class="alertSubscriptionListAction" method="{1}">
+			<result name="subscriptionList">/WEB-INF/pages/alert/process/SubscriptionList.jsp</result>
+		</action>
+	</package>
+
+</struts>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+                
+    
+    
+    <wb-module deploy-name="imal_alert_portal">
+                                
+        
+        
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/alert_services_common_src"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/alert_services_common_resources"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/portal_common_resources"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/portal_common_src"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/service_client_common_src"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/service_client_common_resources"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/library_src"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/reporting_portal_common_src"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/reporting_portal_common_resources"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/reporting_services_common_resources"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/reporting_services_common_src"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/itr_services_client_common"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources_alert_portal"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/portal_common_resources_business"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/service_client_common_src_business"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/portal_common_src_business"/>
+                                
+        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/service_client_common_resources_business"/>
+                        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/gateway_portal_common_src"/>
+                        
+        
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/gateway_service_client_common_src"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/gateway_portal_common_resource"/>
+                
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/gateway_service_client_common_resource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/alert_portal_auxiliary_src"/>
+                                
+        
+        
+        <property name="context-root" value="imal_alert_portal"/>
+                                
+        
+        
+        <property name="java-output-path" value="/imal_alert_portal/WebContent/WEB-INF/classes"/>
+                            
+    
+    
+    </wb-module>
+            
+
+
+</project-modules>

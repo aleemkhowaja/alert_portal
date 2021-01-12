@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="alertlookups" namespace="/path/alert/lookup"
+		extends="path-default">
+		
+		<!-- Companies Lookup-->
+		<action name="CompaniesLookupAction_*" class="alertCompaniesLookupAction"
+			method="{1}">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<!-- Companies Lookup Dependency-->
+		<action name="CompaniesDependencyAction_*" class="alertCompaniesDependencyAction"
+			method="{1}">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<!-- Branches Lookup-->
+		<action name="BranchesLookupAction_*" class="alertBranchesLookupAction"
+			method="{1}">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		
+		<!-- Branches Lookup Dependency-->
+		<action name="BranchesDependencyAction_*" class="alertBranchesDependencyAction"
+			method="{1}">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<!-- Application Lookup-->
+		<action name="ApplicationsLookupAction_*" class="alertApplicationsLookupAction"
+			method="{1}">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<!-- progRef Lookup-->
+		<action name="ProgRefLookupAction_*" class="alertProgRefLookupAction"
+			method="{1}">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<!-- progRef Lookup Dependency-->
+		<action name="ProgRefDependencyAction_*" class="alertProgRefDependencyAction"
+			method="{1}">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<!-- todo alert Lookup-->
+		<action name="TodoAlertLookupAction_*" class="alertTodoAlrtLookupAction"
+			method="{1}">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<!-- todo alert Lookup dependency-->
+		<action name="TodoAlertDependencyAction_*" class="todoAlertDependencyAction"
+			method="{1}">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<!-- todo application dependency-->
+		<action name="ApplicationsDependencyAction_*" class="applicationsDependencyAction"
+			method="{1}">
+			<result name="success" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+
+	
+	</package>
+</struts>   

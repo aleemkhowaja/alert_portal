@@ -1,0 +1,122 @@
+function pwsWebServiceExplorerOnSubGridComplete(event,data)
+{
+	applyWebServiceExplorerSubGridDefaultFunctionality(event,data);
+	var gridId = data.id;
+	var g = $("#"+gridId);
+	var formId = "webServiceGuiGridForm_"+_pageRef;
+	var gridSelectorName = data.id;
+	var grid = $("#"+gridSelectorName);
+	var ids = grid.jqGrid('getDataIDs');
+	loadSubGridData(grid,ids);
+	var ids = grid.jqGrid('getDataIDs');
+	for (var i = 0; i < ids.length; i++) 
+	{
+		var checkVal = grid.jqGrid('getCell', ids[i], 'checkGridRow');
+		if ("" != checkVal && undefined != checkVal && null != checkVal) 
+		{
+			updateSelectOption(ids[i]);
+		}
+	}
+	handleGridCheckBox(gridId);
+}
+
+function handleGridCheckBox(gridId)
+{
+	try{
+	var parentGrid = returnParentGrid(gridId);
+	var parentRowId = returnGridParentRowId(gridId);
+	if(undefined != parentGrid && undefined != parentRowId && isRowSelected(parentRowId) && isSubGridExpanded(parentRowId))
+	{
+		checkGrid(gridId);
+	}
+	}
+	catch(e)
+	{
+		console.log(e);
+	}
+}
+
+//function pwsWebServiceExplorerOnSubGridComplete(event,data)
+//{
+//	applyWebServiceExplorerSubGridDefaultFunctionality(event,data);
+//	var gridId = data.id;
+//	var g = $("#"+gridId);
+//	var formId = "webServiceGuiGridForm_"+_pageRef;
+//	var gridSelectorName = data.id;
+//	var grid = $("#"+gridSelectorName);
+//	var ids = grid.jqGrid('getDataIDs');
+//	rowActions(grid,ids);
+//}
+//
+//function rowActions(grid,ids,fn)
+//{
+//	for (var i = 0; i < ids.length; i++) 
+//	{
+//		var checkVal = grid.jqGrid('getCell', ids[i], 'checkGridRow');
+//		var fieldType = grid.jqGrid('getCell', ids[i], 'fieldType');
+//		var fieldName = grid.jqGrid('getCell', ids[i], 'fieldName');
+//		var loadSubGrid = grid.jqGrid('getCell', ids[i], 'loadSubGrid');
+//		var value = grid.jqGrid('getCell', ids[i], 'value');
+//		if (("" != checkVal && undefined != checkVal && null != checkVal) && (value == undefined || value == "")) 
+//		{
+//			try{
+//				grid.jqGrid('setSelection', ids[i], true);
+//				//grid.jqGrid("setCellValue",ids[i], "checkGridRow", "");
+//			}
+//			catch(e)
+//			{
+//				console.log(e);
+//			}
+//		}
+//		if (loadSubGrid == "1") 
+//		{
+//			var rowObj = $("#"+ids[i]);
+//			type = checkForType(fieldType);
+//			if (type == "HashMap") {
+//				loadDynamicSubGrid(rowObj, 'HashMap');
+//			} else if (type == "List") {
+//				loadDynamicSubGrid(rowObj, 'List');
+//			} else if (type == "List<Object>") {
+//				loadDynamicSubGrid(rowObj, 'List<Object>');				
+//			} else if (!isNonPrimativeDataType(fieldType)) {
+//				//Case Of Object
+//				loadSubGridEvent(null, rowObj);
+//			}
+//		}
+//	}
+//	if(undefined != fn)
+//	{
+//		fn();		
+//	}
+//}
+
+function onPwsExplorerSubGridRowSelect(rowObj)
+{
+	onSubGridRowSelTopic(rowObj);
+	var fieldType = grid.jqGrid('getCell', rowObj.originalEvent.id, 'fieldType');
+    var val = grid.jqGrid('getCell',rowObj.originalEvent.id,'value');
+    var parentRowId = returnSubGridRowParentRowId(rowObj.originalEvent.id);   
+    var parentGridId = getGridIdFromRow(parentRowId);
+    var selRowIds = $("#"+parentGridId).jqGrid("getGridParam", "selarrrow");    
+    var x;
+    var y;
+    for (x in selRowIds)
+    {
+    	if(selRowIds[x] == parentRowId)
+    	{
+    		y = selRowIds[x];
+    	}
+    }
+    if(y != parentRowId)
+    {
+    	$("#"+parentGridId).jqGrid('setSelection',parentRowId, true);   
+    }
+//    if(undefined != val && ""!=val)
+//    {
+//		grid.jqGrid('setCellReadOnly', rowObj.originalEvent.id, 'mappingField', "true");
+//    }
+//    if(!isNonPrimativeDataType(fieldType))
+//    {
+//    	grid.jqGrid('setCellReadOnly', rowObj.originalEvent.id, 'mappingField', "true");
+//    }
+}

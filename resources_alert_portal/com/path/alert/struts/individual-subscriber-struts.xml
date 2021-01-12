@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="alert-individual-subscriber" namespace="/path/alert/subscriber/individual"
+		extends="path-default">
+
+		<action name="IndividualSubscriberMaintAction_*" method="{1}"
+			class="alertIndividualSubscriberAction">
+			<result name="individualSubscriberMaint">/WEB-INF/pages/alert/process/IndSubscriberMaint.jsp</result>
+			<result name="individualSubscriberList">/WEB-INF/pages/alert/process/IndSubscriberList.jsp</result>
+			<result name="othersSubscriberForm">/WEB-INF/pages/alert/process/IndSubscriberOthersDetails.jsp</result>
+			<result name="cifSubscriberForm">/WEB-INF/pages/alert/process/IndSubscriberCifDetails.jsp</result>
+			<result name="usrSubscriberForm">/WEB-INF/pages/alert/process/IndSubscriberUserDetails.jsp</result>
+			<result name="accSubscriberForm">/WEB-INF/pages/alert/process/IndSubscriberAccountDetails.jsp</result>
+			<result name="subscriberOtherLanguage">/WEB-INF/pages/alert/process/OtherLangDetailPopup.jsp</result>
+		
+			<result name="save" type="json">
+				<param name="ignoreHierarchy">false</param>
+
+			</result>
+			<result name="delete" type="json">
+				<param name="ignoreHierarchy">false</param>
+
+			</result>
+			
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="IndividualSubscriberListAction_*" method="{1}"
+			class="alertIndividualSubscriberListAction">
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+
+		<action name="IndSubscriberStatusAction_*" class="indSubscriberStatusAction"
+				method="{1}">
+				<result name="loadGrid" type="json" >
+					<param name="ignoreHierarchy">false</param>
+				</result>
+		</action>
+
+
+
+		<action name="IndividualSubscriberDepAction_*" class="alertIndividualSubscriberDepAction" method="{1}">
+			<result name="success" type="json"> 
+				<param name="ignoreHierarchy">false</param> 
+			</result>			
+		</action>
+
+		<action name="ListIndividualSubscriberAction_*" class="alertListIndividualSubscriber" method="{1}">
+			<result name="listIndividualSubscriber">/WEB-INF/pages/alert/process/ListIndividualSubscriber.jsp</result>
+		</action>
+		
+		<!-- Mohamad Hojeij 04/04/2017 -->
+		<action name="IndividualSubscriberCIFLookupAction_*" method="{1}"
+			class="individualSubscriberCIFLookupAction">
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+
+	   <action name="IndSubUsrLookupAction_*" class="indSubUsrLookupAction" method="{1}">
+			<result name="success" type="json"> 
+				<param name="ignoreHierarchy">false</param> 
+			</result>			
+		</action>
+		
+		<action name="ChannelEndUserLookupAction_*" method="{1}"
+			class="channelEndUserLookupAction">
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+
+
+	</package>
+
+</struts>

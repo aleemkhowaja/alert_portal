@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="dynamicTags" namespace="/path/dynamicTags" extends="path-default">
+		<action name="DynamicTagsListAction_*" class="dynamicTagsListAction" method="{1}">
+				<result name="success" type="json"> 
+					<param name="ignoreHierarchy">false</param> 
+				</result>
+		</action>
+		<action name="DynamicTagsMaintAction_*" class="dynamicTagsMaintAction" method="{1}">
+				<result name="dynamicTagsList">/WEB-INF/pages/alert/dynamictags/DynamicTagsList.jsp</result>
+				<result name="dynamicTagsMaint">/WEB-INF/pages/alert/dynamictags/DynamicTagsMaint.jsp</result>
+				<result name="success" type="json"> 
+					<param name="ignoreHierarchy">false</param> 
+				</result>
+		</action>
+	</package>
+</struts>

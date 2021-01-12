@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="alert-package" namespace="/path/alert/events/eventpackage"
+		extends="path-default">
+
+		<action name="PackageEventMaintAction_*" method="{1}"
+			class="alertPackageEventMaintAction">
+			<result name="packageEventList">/WEB-INF/pages/alert/events/eventpackage/PackageEventList.jsp
+			</result>
+			<result name="packageEventMaint">/WEB-INF/pages/alert/events/eventpackage/PackageEventMaint.jsp
+			</result>
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+
+			<result name="save" type="json">
+				<param name="ignoreHierarchy">false</param>
+
+			</result>
+			<result name="delete" type="json">
+				<param name="ignoreHierarchy">false</param>
+
+			</result>
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		<action name="PackageEventListAction_*" method="{1}"
+			class="alertPackageEventListAction">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+
+		<action name="EventNotInPackageListAction_*" method="{1}"
+			class="alertEventNotInPackageListAction">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+
+		<action name="EventInPackageListAction_*" method="{1}"
+			class="alertEventInPackageListAction">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+
+		<action name="PackageStatusAction_*" class="packageStatusAction"
+			method="{1}">
+			<result name="loadGrid" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+
+		<action name="EventPackageLookupAction_*" method="{1}"
+			class="eventPackageLookupAction">
+			<result type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+	</package>
+
+</struts>

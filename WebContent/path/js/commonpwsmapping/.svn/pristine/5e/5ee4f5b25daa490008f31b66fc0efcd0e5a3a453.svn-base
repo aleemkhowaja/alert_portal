@@ -1,0 +1,6 @@
+
+
+function onPwsListSubGridCompleteFn(event,data)
+{
+	onListSubGridCompleteFn(event,data);
+}

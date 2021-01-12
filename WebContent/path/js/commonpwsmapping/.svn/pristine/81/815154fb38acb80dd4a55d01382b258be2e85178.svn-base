@@ -1,0 +1,70 @@
+function pwsWebServiceExplorerOnGridCompleteFn(event,data,id)
+{
+	webServiceExplorerOnGridCompleteFn(event,data);
+	var formId = "webServiceGuiGridForm_"+_pageRef;
+	var gridSelectorName = data.id;
+	var grid = $("#"+gridSelectorName);
+	var ids = grid.jqGrid('getDataIDs');
+//	loadSubGridData(grid,ids);
+	var returnGridObjectFromColumnId = null;
+	var ids = grid.jqGrid('getDataIDs');
+	for (var i = 0; i < ids.length; i++) 
+	{
+		var checkVal = grid.jqGrid('getCell', ids[i], 'checkGridRow');
+		var fieldType = grid.jqGrid('getCell', ids[i], 'fieldType');
+		var loadSubGrid = grid.jqGrid('getCell', ids[i], 'loadSubGrid');
+		if ("" != checkVal && undefined != checkVal && null != checkVal) {
+		{
+			try{
+				grid.jqGrid('setSelection', ids[i], true);
+			}
+			catch(e)
+			{
+				console.log(e);
+			}
+		}
+		if (loadSubGrid == "1") 
+		{
+			var rowObj = $("#"+ids[i]);
+			type = checkForType(fieldType);
+			if (type == "HashMap") {
+				loadDynamicSubGrid(rowObj, 'HashMap');
+			} else if (type == "List") {
+				loadDynamicSubGrid(rowObj, 'List');
+			} else if (type == "List<Object>") {
+				loadDynamicSubGrid(rowObj, 'List<Object>');				
+			} else if (!isNonPrimativeDataType(fieldType)) {
+				//Case Of Object
+				loadSubGridEvent(null, rowObj);
+			}
+		}
+	}
+	}
+}
+
+function onPwsExplorerRowSelTopic(rowObj)
+{
+	onRowSelTopic(rowObj);
+	var fieldType = grid.jqGrid('getCell', rowObj.originalEvent.id, 'fieldType');
+    /*
+	if(!isNonPrimativeDataType(fieldType))
+    {
+    	grid.jqGrid('setCellReadOnly', rowObj.originalEvent.id, 'mappingField', "true");
+    }
+    */
+    
+}
+
+function applyOnMappingChange(e)
+{
+	var rowId = returnRowIdFromColumnId(e.currentTarget.id);
+    var idArr = rowId.split("_");
+    if(idArr.length<3)
+    {
+		var grid = returnGridObjectFromColumnId(e.currentTarget.id);
+		//grid.jqGrid('setCellReadOnly', getGridIdFromRow(e.currentTarget.id), 'mappingField', "true");
+		grid.jqGrid('setCellValue', rowId, 'expressionHiddenField', "");
+		$("#expressionTextArea_"+_pageRef).val("");
+    }
+	onMappingFieldChange(e);
+}

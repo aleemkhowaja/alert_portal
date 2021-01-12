@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="alert-individual-event" namespace="/path/alert/events/event"
+		extends="path-default">
+
+		<!-- Individual event Maint Action  -->
+		<action name="IndividualEventMaintAction_*" method="{1}" class="alertIndividualEventAction">
+			<result name="individualEventMaint">/WEB-INF/pages/alert/events/event/IndEventMaint.jsp</result> 
+			<result name="individualEventList">/WEB-INF/pages/alert/events/event/IndEventList.jsp</result>
+			<result name="individualEventQueryParamDialog">/WEB-INF/pages/alert/events/event/IndEventQueryParamDialog.jsp</result>
+			<result name="indEventReportAttachmentDialog">/WEB-INF/pages/alert/events/event/IndEventReportAttachmentDialog.jsp</result>
+			<result name="alrtFixedParam">/WEB-INF/pages/alert/events/event/fixedparam/IndFixedParamList.jsp</result> 
+			<result name="individualFixedEventCustomExpressionDialog">/WEB-INF/pages/alert/events/event/individualFixedEventCustomExpressionDialog.jsp</result>
+			<result name="emailReportAttachment">/WEB-INF/pages/alert/events/event/email/ReportAttachment.jsp</result>
+			<result name="oiReportAttachment">/WEB-INF/pages/alert/events/event/omniinbox/ReportAttachment.jsp</result>   
+			
+			<result name="save" type="json">
+				<param name="ignoreHierarchy">false</param>
+
+			</result>
+			<result name="delete" type="json">
+				<param name="ignoreHierarchy">false</param>
+
+			</result>
+			
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+			
+			<result name="error" type="json">
+					<param name="ignoreHierarchy">false</param>
+				</result>
+		</action>
+		
+		<action name="IndividualEventGridAction_*" method="{1}"
+			class="individualEventGridAction">
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<!-- Individual event List Action  -->
+		<action name="IndividualEventListAction_*" method="{1}" class="alertIndividualEventListAction">
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+	 
+	 	<!-- Default and Custom Tags Action  -->
+		<action name="AlrtTagsAction_*" method="{1}" class="alrtTagsAction">
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+
+		<action name="FixedEvtIdLookupAction_*" method="{1}"
+			class="fixedEvtIdLookupAction">
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<action name="IndividualEventDepAction_*" class="alertIndividualEventDepAction" method="{1}">
+			<result name="success" type="json"> 
+				<param name="ignoreHierarchy">false</param> 
+			</result>			
+		</action>
+		
+		<!-- Individual Event Status Action -->
+		<action name="EventStatusAction_*" class="individualEventStatusAction" method="{1}">
+			<result name="loadGrid" type="json">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<!-- Query Lookup Action -->
+		<action name="QueryLookupAction_*" method="{1}" class="queryLookupAction">
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<!-- Query Lookup Dependancy Action -->
+		<action name="QueryLookupDependancyAction_*" method="{1}" class="queryLookupDependancyAction">
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<!-- Report Lookup Action -->
+		<action name="ReportLookupAction_*" method="{1}" class="reportLookupAction">
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+		
+		<!-- Report Lookup Dependancy Action -->
+		<action name="ReportLookupDependancyAction_*" method="{1}" class="reportLookupDependancyAction">
+			<result type="json" name="success">
+				<param name="ignoreHierarchy">false</param>
+			</result>
+		</action>
+
+	</package>
+
+</struts>
+

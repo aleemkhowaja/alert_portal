@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="alertBaseAction" class="com.path.alert.actions.common.AlertBaseAction"
+		scope="prototype" parent="baseAction">		
+		<property name="alertCommonLibBO" ref="alertCommonLibBO"></property>		
+	</bean>
+	
+	<!-- Used for companies lookup in alert -->
+	<bean id="alertCompaniesLookupAction" class="com.path.alert.actions.lookups.companies.CompaniesLookupAction"
+		scope="prototype" parent="baseAction">		
+		<property name="companiesBO" ref="alertCompaniesBO"></property>		
+	</bean>
+	
+	<!-- Used for companies lookup dependency in alert -->
+	<bean id="alertCompaniesDependencyAction" class="com.path.alert.actions.dependencies.companies.CompaniesDependencyAction"
+		scope="prototype" parent="baseAction">		
+		<property name="companiesBO" ref="alertCompaniesBO"></property>
+		<property name="individualEventBO" ref="individualEventBO"></property>		
+	</bean>
+	
+	<!-- Used for branches lookup in alert -->
+	<bean id="alertBranchesLookupAction" class="com.path.alert.actions.lookups.branches.BranchesLookupAction"
+		scope="prototype" parent="baseAction">		
+		<property name="branchesBO" ref="alertBranchesBO"></property>		
+	</bean>
+	
+	<!-- Used for branches lookup dependency in alert -->
+	<bean id="alertBranchesDependencyAction" class="com.path.alert.actions.dependencies.branches.BranchesDependencyAction"
+		scope="prototype" parent="baseAction">		
+		<property name="branchesBO" ref="alertBranchesBO"></property>
+		<property name="individualEventBO" ref="individualEventBO"></property>	
+	</bean> 
+	
+	<!-- Used for application lookup in alert -->
+	<bean id="alertApplicationsLookupAction" class="com.path.alert.actions.lookups.applications.ApplicationsLookupAction"
+		scope="prototype" parent="baseAction">		
+		<property name="applicationsBO" ref="alertApplicationsBO"></property>		
+	</bean>
+	
+	<!-- Used for progref lookup in alert -->
+	<bean id="alertProgRefLookupAction" class="com.path.alert.actions.lookups.progref.ProgRefLookupAction"
+		scope="prototype" parent="baseAction">		
+		<property name="progRefBO" ref="alertProgRefBO"></property>		
+	</bean>
+	
+	<!-- Used for progref lookup dependency in alert -->
+	<bean id="alertProgRefDependencyAction" class="com.path.alert.actions.dependencies.progref.ProgRefDependencyAction"
+		scope="prototype" parent="baseAction">		
+		<property name="progRefBO" ref="alertProgRefBO"></property>		
+	</bean>
+	
+	<!-- Used for todo alert lookup in alert -->
+	<bean id="alertTodoAlrtLookupAction" class=" com.path.alert.actions.lookups.todoalert.TodoAlertLookupAction"
+		scope="prototype" parent="baseAction">		
+		<property name="todoAlertBO" ref="alertTodoAlertBO"></property>		
+	</bean>
+	
+	<!-- Used for todo Alert lookup dependency in alert -->
+	<bean id="todoAlertDependencyAction" class="com.path.alert.actions.dependencies.todoalert.TodoAlertDependencyAction"
+		scope="prototype" parent="baseAction">		
+		<property name="todoAlertBO" ref="alertTodoAlertBO"></property>		
+	</bean>
+	
+	<!-- Used for application lookup dependency in alert -->
+	<bean id="applicationsDependencyAction" class="com.path.alert.actions.dependencies.applications.ApplicationsDependencyAction"
+		scope="prototype" parent="baseAction">		
+		<property name="individualEventBO" ref="individualEventBO"></property>	
+	</bean>
+</beans>

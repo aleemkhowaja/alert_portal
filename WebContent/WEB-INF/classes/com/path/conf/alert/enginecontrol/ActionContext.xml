@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="engineControlMaintAction"
+		class="com.path.alert.actions.enginecontrol.EngineControlMaintAction"
+		scope="prototype" parent="alertBaseAction">
+		<property name="engineControlBO" ref="engineControlBO"></property>	
+	</bean>
+	
+	<bean id="engineControlListAction"
+		class="com.path.alert.actions.enginecontrol.EngineControlListAction"
+		scope="prototype" parent="baseAction">	
+		<property name="engineControlBO" ref="engineControlBO"></property>	
+	</bean>
+	
+	
+	<bean id="alertSubscriberLookupAction"
+		class="com.path.alert.actions.enginecontrol.AlertSubscriberLookupAction"
+		scope="prototype" parent="baseAction">	
+		<property name="engineControlBO" ref="engineControlBO"></property>	
+	</bean>
+	
+	<bean id="alertUserLookupAction"
+		class="com.path.alert.actions.enginecontrol.AlertUserLookupAction"
+		scope="prototype" parent="baseAction">	
+		<property name="engineControlBO" ref="engineControlBO"></property>	
+	</bean>
+	
+	
+	<bean id="channelEndUserIdLookupAction"
+		class="com.path.alert.actions.enginecontrol.ChannelEndUserIdLookupAction"
+		scope="prototype" parent="baseAction">	
+		<property name="engineControlBO" ref="engineControlBO"></property>	
+	</bean>
+	
+</beans>
